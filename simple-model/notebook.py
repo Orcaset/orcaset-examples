@@ -51,8 +51,8 @@ def _(mo):
 def _(date, mo):
     start_date = date(2020, 12, 31)
     revenue_growth_rate = mo.ui.slider(start=-1, stop=1, step=0.01, value=0.15, label="Revenue growth rate")
-    opex_pct_revenue = mo.ui.slider(start=-1, stop=0, step=0.01, value=-0.15, label="Operating expenses (% revenue)")
-    coupon_spread = mo.ui.slider(start=0, stop=0.2, step=0.01, value=0.15, label="Coupon spread")
+    opex_pct_revenue = mo.ui.slider(start=-1, stop=0, step=0.01, value=-0.65, label="Operating expenses (% revenue)")
+    coupon_spread = mo.ui.slider(start=0, stop=0.2, step=0.01, value=0.03, label="Coupon spread")
     mo.vstack([revenue_growth_rate, opex_pct_revenue, coupon_spread])
     return coupon_spread, opex_pct_revenue, revenue_growth_rate, start_date
 

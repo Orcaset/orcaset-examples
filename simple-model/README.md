@@ -1,5 +1,6 @@
 # Orcaset - Basic Model
 
+_Try this interactive notebook online by [forking on marimo](https://marimo.io/notebooks/nb_2zWnAGeaimQFcRfv1EjzJN)!_
 
 This notebook demonstrates basic usage and capabilities of Orcaset.
 
