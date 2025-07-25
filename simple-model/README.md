@@ -1,6 +1,5 @@
 # Orcaset - Basic Model
 
-_An interactive read-only version of this notebook is available at [here](https://orcaset-notebooks.livelyisland-e61288e8.eastus.azurecontainerapps.io)._
 
 This notebook demonstrates basic usage and capabilities of Orcaset.
 

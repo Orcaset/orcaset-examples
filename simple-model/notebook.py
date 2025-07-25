@@ -83,8 +83,6 @@ def _(mo):
         r"""
     ## Constructing the Model
 
-    _If you are viewing the hosted interactive app, click the `···` button in the top right then `Show code` to see the source code._
-
     This section defines the model classes each class represents a line item in the model. See the [`orcaset` homepage](https://github.com/Orcaset/orcaset) for an in-depth guide to the using Orcaset. Note that all imports are in the last cell of this notebook.
     """
     )
@@ -110,7 +108,7 @@ def _(mo):
 @app.cell
 def _(Accrual, AccrualSeriesBase, Iterable, P, dataclass):
     @dataclass
-    class NetIncome[P = None](AccrualSeriesBase[P]):
+    class NetIncome[P](AccrualSeriesBase[P]):
         operating_income: "OperatingIncome[NetIncome]"
         interest_expense: "InterestExpense[NetIncome]"
 
@@ -122,7 +120,7 @@ def _(Accrual, AccrualSeriesBase, Iterable, P, dataclass):
 @app.cell
 def _(Accrual, AccrualSeriesBase, Iterable, NetIncome, P, dataclass):
     @dataclass
-    class OperatingIncome[P: NetIncome = NetIncome](AccrualSeriesBase[P]):
+    class OperatingIncome[P: NetIncome](AccrualSeriesBase[P]):
         revenue: "Revenue[OperatingIncome]"
         operating_expense: "OperatingExpense[OperatingIncome]"
 
@@ -157,7 +155,7 @@ def _(
     relativedelta,
 ):
     @dataclass
-    class Revenue[P: OperatingIncome = OperatingIncome](AccrualSeriesBase[P]):
+    class Revenue[P: OperatingIncome](AccrualSeriesBase[P]):
         start_date: date
         freq: relativedelta
         initial_amount: float
@@ -171,7 +169,7 @@ def _(
 
 
     @dataclass
-    class OperatingExpense[P: OperatingIncome = OperatingIncome](AccrualSeriesBase[P]):
+    class OperatingExpense[P: OperatingIncome](AccrualSeriesBase[P]):
         pct_revenue: float
 
         def _accruals(self) -> Iterable[Accrual]:
@@ -205,7 +203,7 @@ def _(
     relativedelta,
 ):
     @dataclass
-    class InterestExpense[P: NetIncome = NetIncome](AccrualSeriesBase[P]):
+    class InterestExpense[P: NetIncome](AccrualSeriesBase[P]):
         start_date: date
         principal: float
         coupon: float
@@ -279,19 +277,19 @@ def _(
     start_date,
     t_rate,
 ):
-    net_income = NetIncome(
-        operating_income=OperatingIncome(
-            revenue=Revenue(
+    net_income = NetIncome[None](
+        operating_income=OperatingIncome[NetIncome](
+            revenue=Revenue[OperatingIncome](
                 start_date=start_date,
                 freq=relativedelta(months=3, day=31),
                 initial_amount=1000,
                 growth_rate=revenue_growth_rate.value
             ),
-            operating_expense=OperatingExpense(
+            operating_expense=OperatingExpense[OperatingIncome](
                 pct_revenue=opex_pct_revenue.value
             )
         ),
-        interest_expense=InterestExpense(
+        interest_expense=InterestExpense[NetIncome](
             start_date=start_date,
             principal=1_500,
             coupon=t_rate + coupon_spread.value

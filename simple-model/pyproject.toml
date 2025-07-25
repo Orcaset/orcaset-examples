@@ -3,12 +3,12 @@ name = "simple-model"
 version = "0.1.0"
 description = "Simple Orcaset model with marimo"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "altair>=5.5.0",
     "httpx>=0.28.1",
     "marimo>=0.14.13",
-    "orcaset>=0.1.1",
+    "orcaset==0.1.2",
     "pandas>=2.3.1",
     "pyarrow>=21.0.0",
 ]
