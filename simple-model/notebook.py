@@ -8,7 +8,7 @@ app = marimo.App(width="medium")
 def _(mo):
     mo.md(
         r"""
-    # Orcaset - Basic Model
+    # Orcaset - Basic Model Example
 
     This notebook demonstrates basic usage and capabilities of Orcaset.
 
@@ -82,6 +82,8 @@ def _(mo):
     mo.md(
         r"""
     ## Constructing the Model
+
+    _If you are viewing the hosted interactive app, click the `···` button in the top right then `Show code` to see the source code._
 
     This section defines the model classes each class represents a line item in the model. See the [`orcaset` homepage](https://github.com/Orcaset/orcaset) for an in-depth guide to the using Orcaset. Note that all imports are in the last cell of this notebook.
     """

@@ -1,6 +1,6 @@
 # Orcaset - Basic Model
 
-_Run this notebook interactively in your browser at_
+_An interactive read-only version of this notebook is available at [here](https://orcaset-notebooks.livelyisland-e61288e8.eastus.azurecontainerapps.io)._
 
 This notebook demonstrates basic usage and capabilities of Orcaset.
 
@@ -21,4 +21,4 @@ Net Income
 
 Interest expense is calculated by adding a spread to the most recent end-of-day 5-year US Treasury rate fetched over the web. Since the rate is updated at the end of every business day, the interest expense line item will change depending on the date this notebook is run.
 
-The demo analysis is short. Model definitions, data retreival, scenario instantiation, and chart presentation are all delivered in less than 100 lines of code.
+The demo analysis is short. Model definitions, data retrieval, scenario instantiation, and chart presentation are all delivered in less than 100 lines of code.
