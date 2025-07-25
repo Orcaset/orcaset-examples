@@ -4,4 +4,4 @@ This repository contains models demonstrating orcaset usage.
 
 ## Index
 
-- [Traeger](traeger-basic-three-statement/) - Basic three statement model
+- [Simple model](simple-model/) - Basic example of creating a model and fetching over the web
