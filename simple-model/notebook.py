@@ -10,7 +10,7 @@ def _(mo):
         r"""
     # Orcaset - Basic Model Example
 
-    This notebook demonstrates basic usage and capabilities of Orcaset.
+    This notebook demonstrates basic usage and capabilities of [Orcaset](https://github.com/Orcaset/orcaset).
 
     1. **Model construction** - Create the model by construction classes for each line item
     2. **Run model scenarios** - Instantiate the model with base case assumptions
@@ -60,7 +60,8 @@ def _(date, mo):
 @app.cell
 def _(alt, df, mo):
     chart_df = df.T.stack().reset_index().rename(columns={'level_0': 'Date', 'level_1': 'Item', 0:'Value'})
-    mo.ui.altair_chart(alt.Chart(chart_df).mark_line().encode(x='Date', y='Value', color='Item'))
+    mo.ui.altair_chart(alt.Chart(chart_df).mark_line()
+        .encode(x=alt.X('Date:T', axis=alt.Axis(grid=False, format='%Y-%m-%d')), y='Value', color='Item'))
     return
 
 
@@ -73,7 +74,7 @@ def _(df, mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""The rest of this notebook defines the model, fetches the Treasury rate, and creates a model scenario (note that marimo cells do not run strictly top to bottom).""")
+    mo.md(r"""The rest of this notebook defines the model, fetches the Treasury rate, and creates a model scenario (note that marimo cells run in order of dependency, not in order of appearance).""")
     return
 
 
@@ -251,7 +252,7 @@ def _(mo):
 
 @app.cell
 def _(httpx):
-    response = httpx.get(f'https://treasury-rates.azurewebsites.net/interpolate?tenor={5}')
+    response = httpx.get(f'https://treasury-rates.azurewebsites.net/interpolate?tenor={5}', timeout=10)
     t_rate = response.json()['rate']
     print("Current EOD 5-year Treasury rate: ", "{:.2%}".format(t_rate))
     return (t_rate,)
@@ -336,6 +337,14 @@ def _(mo):
 @app.cell
 def _():
     import marimo as mo
+    return (mo,)
+
+
+@app.cell
+def _():
+    import pyodide_http
+    pyodide_http.patch_all()  # Enable httpx requests from WASM export
+
     from dataclasses import dataclass
     from typing import Iterable
     from datetime import date
@@ -355,7 +364,6 @@ def _():
         dataclass,
         date,
         httpx,
-        mo,
         pd,
         relativedelta,
     )

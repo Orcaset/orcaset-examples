@@ -206,3 +206,6 @@ deploy.md
 Dockerfile
 .dockerignore
 output_dir/
+index.js
+node_modules/
+wrangler*

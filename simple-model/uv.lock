@@ -552,6 +552,15 @@ wheels = [
 ]
 
 [[package]]
+name = "pyodide-http"
+version = "0.2.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/0b/69/122182a6ee6b3b55256de91b91b0a03965997be3e4936929b7bfdec0c99e/pyodide_http-0.2.2.tar.gz", hash = "sha256:d98132c664a621c950d4d795fa013b763b0ebc223f6107d06483b736802b61c0", size = 9658, upload-time = "2025-02-05T14:21:29.492Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/43/aa/471c9cb07acd2de48acf70aef07139f08f2f7ea6f85883f19a7296243ffb/pyodide_http-0.2.2-py3-none-any.whl", hash = "sha256:cf006ea593c1643b5badeb4d42ed24a6eebd830276171fa1f82de0777b3fb608", size = 9796, upload-time = "2025-02-05T14:21:28.15Z" },
+]
+
+[[package]]
 name = "python-dateutil"
 version = "2.9.0.post0"
 source = { registry = "https://pypi.org/simple" }
@@ -699,6 +708,7 @@ dependencies = [
     { name = "orcaset" },
     { name = "pandas" },
     { name = "pyarrow" },
+    { name = "pyodide-http" },
 ]
 
 [package.metadata]
@@ -709,6 +719,7 @@ requires-dist = [
     { name = "orcaset", specifier = "==0.1.2" },
     { name = "pandas", specifier = ">=2.3.1" },
     { name = "pyarrow", specifier = ">=21.0.0" },
+    { name = "pyodide-http", specifier = ">=0.2.2" },
 ]
 
 [[package]]
