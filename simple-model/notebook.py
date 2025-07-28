@@ -8,16 +8,18 @@ app = marimo.App(width="medium")
 def _(mo):
     mo.md(
         r"""
-    # Orcaset - Basic Model Example
+    # Orcaset - Basic Model 
 
-    This notebook demonstrates basic usage and capabilities of [Orcaset](https://github.com/Orcaset/orcaset).
+    [Orcaset](https://github.com/Orcaset/orcaset) is an open toolkit for financial analysis. It enables powerful processes like automation using AI code generation, flexible data source integration, model testability, and version control by running in an open Python environment.
 
-    1. **Model construction** - Create the model by construction classes for each line item
-    2. **Run model scenarios** - Instantiate the model with base case assumptions
-    3. **Third-party data integration** - Fetch interpolated Treasury rates via web API
+    This notebook demonstrates basic usage and capabilities of the `orcaset` library with a minimal example.
+
+    1. **Model construction** - Create the model by defining classes for each line item
+    2. **Run model scenarios** - Instantiate the model with scenario assumptions
+    3. **Third-party data integration** - Fetch current Treasury rates via web API
     4. **Interactive sensitivity** - Use [marimo's](https://marimo.io) reactive UI components to create interactive charts
 
-    This notebook creates a simple model with the following structure.
+    The model developed in this notebook has the following structure:
 
     ```
         ┌── Revenue
@@ -27,9 +29,7 @@ def _(mo):
     Net Income
     ```
 
-    Interest expense is calculated by adding a spread to the most recent end-of-day 5-year US Treasury rate fetched over the web. Since the rate is updated at the end of every business day, the interest expense line item will change depending on the date this notebook is run.
-
-    The demo analysis is short. Model definitions, data retrieval, scenario instantiation, and chart presentation are all delivered in less than 100 lines of code.
+    This example is short. The full analysis delivers model definitions, data retrieval, scenario sensitivity, and chart presentation in less than 100 lines of code.
     """
     )
     return
