@@ -244,7 +244,7 @@ def _(mo):
     }
     ```
 
-    To get the interpolated base rate, we'll send a request to `https://treasury-rates.azurewebsites.net/interpolate` with a single query parameter `tenor` equal to the desired tenor in years.
+    To get the interpolated base rate, we'll send a request to `https://rates.orcaset.com/interpolate` with a single query parameter `tenor` equal to the desired tenor in years.
     """
     )
     return
@@ -252,7 +252,7 @@ def _(mo):
 
 @app.cell
 def _(httpx):
-    response = httpx.get(f'https://treasury-rates.azurewebsites.net/interpolate?tenor={5}', timeout=10)
+    response = httpx.get(f'https://rates.orcaset.com/interpolate?tenor={5}', timeout=10)
     t_rate = response.json()['rate']
     print("Current EOD 5-year Treasury rate: ", "{:.2%}".format(t_rate))
     return (t_rate,)
