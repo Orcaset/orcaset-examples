@@ -1,8 +1,8 @@
 # Orcaset - Basic Model
 
-_Try this interactive notebook online by [forking on marimo](https://marimo.io/notebooks/nb_2zWnAGeaimQFcRfv1EjzJN)!_
+_Try this interactive notebook in the browser on [marimo](https://marimo.app/github.com/orcaset/orcaset-examples/simple-model/notebook.py)._
 
-This notebook demonstrates basic usage and capabilities of Orcaset.
+This notebook demonstrates basic usage and capabilities of [Orcaset](https://github.com/Orcaset/orcaset).
 
 1. **Model construction** - Create the model by construction classes for each line item
 2. **Run model scenarios** - Instantiate the model with base case assumptions
