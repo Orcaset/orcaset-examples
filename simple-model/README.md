@@ -1,6 +1,6 @@
 # Orcaset - Basic Model
 
-_Try this interactive notebook in the browser on [marimo](https://marimo.app/github.com/orcaset/orcaset-examples/simple-model/notebook.py)._
+_Try this interactive notebook in the browser on [marimo](https://marimo.app/github.com/Orcaset/orcaset-examples/blob/main/simple-model/notebook.py)._
 
 This notebook demonstrates basic usage and capabilities of [Orcaset](https://github.com/Orcaset/orcaset).
 
