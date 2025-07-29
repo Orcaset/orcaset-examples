@@ -1,0 +1,25 @@
+[project]
+name = "apartment-rent-roll"
+version = "0.1.0"
+description = "Apartment rent roll model using Orcaset"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "cattrs>=25.1.1",
+    "google-genai>=1.27.0",
+    "marimo>=0.14.13",
+    "openai>=1.97.1",
+    "orcaset>=0.1.2",
+    "pandas>=2.3.1",
+    "pyarrow>=21.0.0",
+]
+
+
+[tool.ruff]
+line-length = 120
+
+[dependency-groups]
+dev = [
+    "python-lsp-server>=1.13.0",
+    "ty>=0.0.1a16",
+]

@@ -1,2 +1,5 @@
 .DS_Store
 traeger-basic-three-statement/
+.venv*
+output_dir*
+*__pycache__*

@@ -1,0 +1,12 @@
+[
+  {"unit": "0101", "start": "2024-05-12", "end": "2025-05-12", "monthly_rent": 2850.0, "vacant": true, "unit_type": "1bd"},
+  {"unit": "0102", "start": "2024-05-12", "end": "2025-05-12", "monthly_rent": 2890.0, "vacant": true, "unit_type": "1bd"},
+  {"unit": "0103", "start": "2024-05-12", "end": "2025-05-12", "monthly_rent": 2880.0, "vacant": true, "unit_type": "1bd"},
+  {"unit": "0104", "start": "2024-05-12", "end": "2025-05-12", "monthly_rent": 2900.0, "vacant": true, "unit_type": "1bd"},
+  {"unit": "0105", "start": "2024-05-12", "end": "2025-05-12", "monthly_rent": 2910.0, "vacant": true, "unit_type": "1bd"},
+  {"unit": "0201", "start": "2024-05-12", "end": "2025-05-12", "monthly_rent": 2900.0, "vacant": true, "unit_type": "1bd"},
+  {"unit": "0202", "start": "2024-05-12", "end": "2025-05-12", "monthly_rent": 2925.0, "vacant": true, "unit_type": "1bd"},
+  {"unit": "0203", "start": "2024-05-12", "end": "2025-05-12", "monthly_rent": 2950.0, "vacant": true, "unit_type": "1bd"},
+  {"unit": "0204", "start": "2024-05-12", "end": "2025-05-12", "monthly_rent": 2900.0, "vacant": true, "unit_type": "1bd"},
+  {"unit": "0205", "start": "2024-05-12", "end": "2025-05-12", "monthly_rent": 2910.0, "vacant": true, "unit_type": "5bd"}
+]
