@@ -24,14 +24,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: uv pip install -r ./simple-model/pyproject.toml
+      - run: uv pip install --system -r ./simple-model/pyproject.toml
       - run: marimo export html-wasm simple-model/notebook.py --mode edit -o _site/simple-model
 
       - name: Build apartment-rent-roll
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: uv pip install -r ./apartment-rent-roll/pyproject.toml
+      - run: uv pip install --system -r ./apartment-rent-roll/pyproject.toml
       - run: marimo export html-wasm apartment-rent-roll/notebook.py --mode edit -o _site/apartment-rent-roll
 
       - name: Create .nojekyll
