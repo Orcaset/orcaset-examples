@@ -17,18 +17,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
       - name: Build simple-model
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install -e ./simple-model
+      - run: uv pip install -r ./simple-model/pyproject.toml
       - run: marimo export html-wasm simple-model/notebook.py --mode edit -o _site/simple-model
 
       - name: Build apartment-rent-roll
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install -e ./apartment-rent-roll
+      - run: uv pip install -r ./apartment-rent-roll/pyproject.toml
       - run: marimo export html-wasm apartment-rent-roll/notebook.py --mode edit -o _site/apartment-rent-roll
 
       - name: Create .nojekyll
