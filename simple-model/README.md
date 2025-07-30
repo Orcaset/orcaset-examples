@@ -1,6 +1,6 @@
 # Orcaset - Basic Model
 
-_Try this interactive notebook in the browser on [marimo](https://marimo.app/github.com/Orcaset/orcaset-examples/blob/main/simple-model/notebook.py)._
+_[Try this notebook interactively in the browser!](https://orcaset.github.io/orcaset-examples/simple-model/)_
 
 [Orcaset](https://github.com/Orcaset/orcaset) is an open toolkit for financial analysis. It enables powerful processes like automation using AI code generation, flexible data source integration, model testability, and version control by running in an open Python environment.
 
