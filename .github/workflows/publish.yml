@@ -1,0 +1,56 @@
+name: Publish marimo notebooks
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build simple-model
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e ./simple-model
+      - run: marimo export html-wasm simple-model/notebook.py --mode edit -o _site/simple-model
+
+      - name: Build apartment-rent-roll
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e ./apartment-rent-roll
+      - run: marimo export html-wasm apartment-rent-roll/notebook.py --mode edit -o _site/apartment-rent-roll
+
+      - name: Create .nojekyll
+        run: touch _site/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
