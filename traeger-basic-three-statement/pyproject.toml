@@ -1,0 +1,13 @@
+[project]
+name = "traeger-basic-three-statement"
+version = "0.1.0"
+description = "Traeger model"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "orcaset==0.2.0a1",
+]
+
+
+[tool.ruff]
+line-length=120
